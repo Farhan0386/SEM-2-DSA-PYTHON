@@ -1,14 +1,13 @@
-class Node:
-    def __init__(self, data=None, next=None):
-        self.data = data
-        self.next = next
-
-class Linked_list:
-    def __init__(self,head=None):
-        self.head=head
-
-    def insert_at_Begining(self,data):
-        new_Node=Node(data,self.head)
-        self.head=new_Node
-    def insert_at_End(self,data):
-        new_Node=Node(data)      
+# 
+l1=[8,6,1,None,None,None,5,None,None]
+root=construct(l1)
+def construct(self, l1):
+    if len(l1)==0:
+        return None
+    val=l1.pop(0)
+    if val is None:
+        return None
+    node=Node(val)
+    node.left=construct(l1)
+    node.right=construct(l1)
+    return node
